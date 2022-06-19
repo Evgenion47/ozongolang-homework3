@@ -1,0 +1,6 @@
+docker run --rm --name clickhouse-server \
+    -e CLICKHOUSE_DB=clickdb \
+    -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1 \
+    -e CLICKHOUSE_PASSWORD=password1 \
+    -e CLICKHOUSE_USER=clickuser \
+    -p 9000:9000 -p 8123:8123 --ulimit nofile=262144:262144 clickhouse/clickhouse-server:21.3-alpine
